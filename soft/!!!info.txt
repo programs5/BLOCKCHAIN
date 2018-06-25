@@ -1,0 +1,41 @@
+node.js.installer-v8.11.3-x64.msi
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+инстралятор Node.js, нужен для того чтобы установить ganache-cli-develop
+
+
+
+ganache-cli-develop.zip -- for  command line interface
+ganache-setup-1.1.0.exe -- for win gui
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+[npm install -g ganache-cli]
+
+https://github.com/trufflesuite/ganache-cli
+https://blog.zeppelin.solutions/a-gentle-introduction-to-ethereum-programming-part-1-783cc7796094
+
+Ganache CLI is the latest version of TestRPC: a fast and customizable blockchain emulator. It allows you to make calls to the blockchain without the overheads of running an actual Ethereum node.
+
+Transactions are "mined" instantly.
+No transaction cost.
+Accounts can be re-cycled, reset and instantiated with a fixed amount of Ether (no need for faucets or mining).
+Gas price and mining speed can be modified.
+A convenient GUI gives you an overview of your testchain events.
+
+---
+
+Ganache CLI, part of the Truffle suite of Ethereum development tools, is the command line version of Ganache, your personal blockchain for Ethereum development.
+Ganache CLI uses ethereumjs to simulate full client behavior and make developing Ethereum applications faster, easier, and safer. It also includes all popular RPC functions and features (like events) and can be run deterministically to make development a breeze.
+
+
+
+web3.js-develop.zip
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+[npm install web3]
+
+https://github.com/ethereum/web3.js/
+
+web3.js is a collection of libraries which allow you to interact with a local or remote ethereum node, using a HTTP or IPC connection.
+
+
+remix-ide-gh-pages.zip
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+offline ide for programming solidity

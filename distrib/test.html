@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<script type="text/javascript" src="web3.js"></script>
+<script type="text/javascript">
+   
+    var Web3 = require('web3');
+	provider = new Web3.providers.HttpProvider("http://localhost:8545")
+	web3 = new Web3(provider)
+
+	function getAccountsBalance() {	
+		
+		web3.eth.accounts.forEach(account => {
+			balance = web3.eth.getBalance(account).toNumber();
+			
+			console.log('account: ' + account + ' | ' + balance + ' ETH');			
+		})
+	}
+	
+	function sendTransacton() {
+	
+		from = web3.eth.accounts[0]
+		to = web3.eth.accounts[1]
+		
+		transaction = { from: from, to: to, value: 100000 }
+		
+		transactionHash = web3.eth.sendTransaction(transaction)
+		
+		transactionInfo = web3.eth.getTransaction(transactionHash)
+		
+		//console.log(transactionInfo)	
+		console.log('txHash:' + transactionInfo.hash + 
+					'\nblockHash: ' + transactionInfo.blockHash + 
+					'\nblockNumber: ' + transactionInfo.blockNumber +
+					'\ntxIndex: ' + transactionInfo.transactionIndex +
+					'\ntxFrom: ' + transactionInfo.from +
+					'\ntxTo: ' + transactionInfo.to +
+					'\ntxValue: ' + transactionInfo.value 
+		)	
+	}
+
+	
+	/*
+    var web3 = new Web3();
+    web3.setProvider(new web3.providers.HttpProvider());
+
+    function watchBalance() {
+        var coinbase = web3.eth.coinbase;
+
+        var originalBalance = web3.eth.getBalance(coinbase).toNumber();
+        document.getElementById('coinbase').innerText = 'coinbase: ' + coinbase;
+        document.getElementById('original').innerText = ' original balance: ' + originalBalance + '    watching...';
+
+        web3.eth.filter('latest').watch(function() {
+            var currentBalance = web3.eth.getBalance(coinbase).toNumber();
+            document.getElementById("current").innerText = 'current: ' + currentBalance;
+            document.getElementById("diff").innerText = 'diff:    ' + (currentBalance - originalBalance);
+        });
+    }
+	*/
+
+</script>
+</head>
+<body>
+    <h1>coinbase balance</h1>
+    <button type="button" onClick="getAccountsBalance();">watch balance</button>
+	<button type="button" onClick="sendTransacton();">sendTran</button>
+    <!--
+	<div></div>
+    <div id="coinbase"></div>
+    <div id="original"></div>
+    <div id="current"></div>
+    <div id="diff"></div>
+	-->
+</body>
+</html>
