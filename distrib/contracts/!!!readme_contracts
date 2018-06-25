@@ -1,0 +1,11 @@
+# из текстового описания контракта сделать bin файл
+
+solcjs MyToken.sol --bin
+
+# Next, you will need to use solc to build the ABI (Application Binary Interface), 
+# an interface or template of your contract that tells you the available methods of it. 
+# This is the point of contact with Web3. Your just need to run:
+# Then, you will see a new file called MyToken_sol_MyToken.abi with a JSON content 
+# that bassically defines the interface of your contract.
+
+solcjs MyToken.sol --abi
