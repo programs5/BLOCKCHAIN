@@ -48,9 +48,14 @@ Solidity compiler for node.js called solc
 Node.js: fs-extra
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 [
+  sudo npm install -g fs-extra    "инсталировать глобально в системе"
+
+
   cd /usr/local/lib/node_modules/
   sudo npm install --save fs-extra
 ]
+
+ls -al /usr/local/lib/node_modules
 
 fs-extra adds file system methods that aren't included in the native fs module and adds promise support to
 the fs methods. It also uses graceful-fs to prevent EMFILE errors. It should be a drop in replacement for fs.
