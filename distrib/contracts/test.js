@@ -1,6 +1,5 @@
 Web3 = require('../lib_js_web3/web3')
-
-HttpProvider = require('../lib_js_web3/web3/httpprovider'); 
+HttpProvider = require('../lib_js_web3/web3/httpprovider');
 
 provider = new Web3.providers.HttpProvider("http://localhost:8545")
 
