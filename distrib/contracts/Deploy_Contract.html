@@ -7,7 +7,11 @@
 
 	//module.exports = {
   //      "externals": {
+<<<<<<< HEAD
 	//		"fs": "require('fs')"
+=======
+	//		"fs-extra": "require('fs-extra')"
+>>>>>>> 93eadb9a5d467e0c0bde4a82f38b15fb66fef512
 	//	}
 	//}
 
@@ -15,11 +19,20 @@
 	provider = new Web3.providers.HttpProvider("http://localhost:8545")
 	web3 = new Web3(provider)
 
+<<<<<<< HEAD
 	//deployContract
 	function deployContract() {
 
 		// load files
 		var fs = require('fs-extra');
+=======
+	//	deployContract
+	function deployContract() {
+
+		var fs = require('/usr/local/lib/node_modules/fs-extra');
+
+		// load files
+>>>>>>> 93eadb9a5d467e0c0bde4a82f38b15fb66fef512
 		myTokenABIFile = fs.readFileSync('MyToken_sol_MyToken.abi')
 		myTokenABI  = JSON.parse(myTokenABIFile.toString())
 		myTokenBINFile = fs.readFileSync('MyToken_sol_MyToken.bin')
