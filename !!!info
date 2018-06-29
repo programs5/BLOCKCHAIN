@@ -28,9 +28,11 @@ easier, and safer. It also includes all popular RPC functions and features (like
 deterministically to make development a breeze.
 
 
-web3.js-develop.zip
+web3.js
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-[npm install web3]
+[npm install web3] - unix
+[npm install web3@0.19] - windows (выполнить из git bash, перейти в c:\Program Files, в ней должен быть package.json)
+
 
 ls -al /Users/mac/node_modules/web3*
 
@@ -38,7 +40,7 @@ web3.js is a collection of libraries which allow you to interact with a local or
 using a HTTP or IPC connection.
 
 
-solc-js-master.zip
+solc-js
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 [npm install -g solc]
 
