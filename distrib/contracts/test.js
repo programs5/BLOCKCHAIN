@@ -1,11 +1,11 @@
-Web3 = require('../lib_js_web3/web3')
-HttpProvider = require('../lib_js_web3/web3/httpprovider');
+//  for windows set envirompment variable:
+//  NODE_PATH=C:\Users\[USERNAME]\AppData\Roaming\npm\node_modules
+
+Web3 = require('web3')
+var fs = require('/usr/local/lib/node_modules/fs-extra');
 
 provider = new Web3.providers.HttpProvider("http://localhost:8545")
-
 web3 = new Web3(provider)
-
-var fs = require('fs');
 
 // load files
 
@@ -16,9 +16,27 @@ myTokenByteCode = myTokenBINFile.toString()
 
 //deploy
 
-account = web3.eth.accounts[0]
-MyTokenContract = web3.eth.contract(myTokenABI)
-contractData = { data: myTokenByteCode, from: account, gas: 999999 }
-deployedContract = MyTokenContract.new(contractData)
+web3.eth.getAccounts().then(console.log)
+//var aaa = web3.eth.getAccounts().then(console.log);
+//console.log('AAA==' + aaa);
 
-console.log('deployedContract.address: ' + deployedContract.address)
+
+//web3.eth.accounts.forEach(account => {
+//  balance = web3.eth.getBalance(account).toNumber();
+//
+//  console.log('account: ' + account + ' | ' + balance + ' ETH');
+//})
+
+account = web3.eth.accounts[0]
+
+console.log('account: ' + account)
+
+myTokenContract = new web3.eth.Contract(myTokenABI)
+
+contractData = {data: myTokenByteCode, from: account, gas: 999999 }
+deployedContrac = myTokenContract.deploy(contractData)
+
+//deployedContract = MyTokenContract.new(contractData)
+//console.log('deployedContract.address: ' + deployedContract.address)
+
+console.log('deployedContract.address: ' + deployedContrac.address)
